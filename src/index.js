@@ -12,6 +12,7 @@ if (!PORT || PORT < 8000 || PORT >= 9000) {
 express()
     .use(morgan('tiny'))
     .use(bodyParser.text({ type: 'text/html' }))
+    .use('/', require('./root'))
     .use('/', require('./htmlToImage'))
     .listen(PORT);
 
